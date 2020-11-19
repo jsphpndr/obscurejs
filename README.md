@@ -1,10 +1,20 @@
 # Obscure.js - v1.0.0
 
-A lightweight script to obscure (or hide) telephone numbers and email addresses from spammers.
+A lightweight script to obscure (or hide) email addresses and telephone numbers from spammers.
 
-<small>**Note:** The plugin comes with limited options at present. Future versions will include further options to change display patterns for phone numbers (i.e. "(555) 555-5555", "555-555-5555", "555.555.5555", "555 555 5555").<br>Suggestions are welcome.</small>
+**Note:** 
 
-# Getting Started
+The plugin comes with limited options at present. Future versions will include further options to change display patterns for phone numbers (i.e. "555-555-5555", "555.555.5555", "555 555 5555").
+
+Suggestions are welcome.
+
+## Table of Contents
+
+* [Getting Started](#getting-started)
+* [Adding Contact Information](#adding-contact-information)
+* [Initialize Obscure](#intialize-obscure)
+
+## Getting Started
 
 Compiled and production-ready code can be found in the dist directory. The src directory contains development code.
 
@@ -20,6 +30,8 @@ You can dowload the files directly from Github.
 ```
 
 #### CDN
+
+Coming soon.
 
 #### NPM
 
@@ -64,6 +76,8 @@ The attribute values follow the <a href="https://en.wikipedia.org/wiki/Internati
 <script data-country="1" data-area="555" data-prefix="5555" data-line="5555" obscure></script>
 
 ```
+
+**NOTE:** The default pattern is fixed at "(555) 555-5555". Future versions of this plugin will feature options for different patterns.
 
 ## Initialize Obscure
 
