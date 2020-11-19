@@ -22,7 +22,7 @@ Compiled and production-ready code can be found in the dist directory. The src d
 
 #### Direct Download
 
-You can dowload the files directly from Github.
+You can [dowload the files directly from Github](https://github.com/jsphpndr/obscurejs/raw/main/dist/scripts/obscure.min.js).
 
 ```
 <script src="/path/to/obscure.min.js"></script>
