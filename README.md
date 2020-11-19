@@ -2,9 +2,18 @@
 
 A lightweight script to obscure (or hide) telephone numbers and email addresses from spammers.
 
-<small>**Note:** The plugin comes with limited options at present. Future versions will include further options to change display patterns for phone numbers (i.e. "(555) 555-5555", "555-555-5555", "555.555.5555", "555 555 5555").<br>Suggestions are welcome.</small>
+**Note:** 
 
-# Getting Started
+The plugin comes with limited options at present. Future versions will include further options to change display patterns for phone numbers (i.e. "(555) 555-5555", "555-555-5555", "555.555.5555", "555 555 5555").
+
+Suggestions are welcome.
+
+## Table of Contents
+
+* [Getting Started](#getting-started)
+* [Adding Contact Information](#adding-contact-information)
+
+## Getting Started
 
 Compiled and production-ready code can be found in the dist directory. The src directory contains development code.
 
