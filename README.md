@@ -1,6 +1,8 @@
-# Obscure.js - v1.0.0
+# Obscure.js
 
 A lightweight script to obscure (or hide) email addresses and telephone numbers from spammers.
+
+**[View the ]()**
 
 **Note:** 
 
@@ -22,7 +24,7 @@ Compiled and production-ready code can be found in the dist directory. The src d
 
 #### Direct Download
 
-You can download the files directly from Github.
+You can [download the files directly from Github](https://github.com/jsphpndr/obscurejs/archive/v1.0.0.zip).
 
 ```
 <script src="/path/to/obscure.min.js"></script>
@@ -31,11 +33,24 @@ You can download the files directly from Github.
 
 #### CDN
 
-Coming soon.
+```
+<!-- Always get the latest version. -->
+<script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure/dist/obscure.min.js"></script>
 
-#### NPM
+<!-- Get minor updates and patch fixes within a major version -->
+<script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@1/dist/obscure.min.js"></script>
 
-Coming soon.
+<!-- Get patch fixes within a minor version -->
+<script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@1.0/dist/obscure.min.js"></script>
+
+<!-- Get a specific version -->
+<script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@1.0.0/dist/obscure.min.js"></script>
+
+```
+
+<!-- #### NPM
+
+Coming soon. -->
 
 ## Adding Contact Information
 
@@ -58,6 +73,13 @@ The `data-local` attribute will contain the username and `data-domain` the relev
 
 ```
 
+This will produce the following:
+
+```
+<a href="mailto:hello@example.com">hello@example.com</a>
+
+```
+
 ### Adding telephone numbers
 
 There's not only a need to hide emails, but phone numbers, as well.
@@ -74,6 +96,13 @@ The attribute values follow the <a href="https://en.wikipedia.org/wiki/Internati
 
 ```
 <script data-country="1" data-area="555" data-prefix="5555" data-line="5555" obscure></script>
+
+```
+
+This will produce the following:
+
+```
+<a href="tel:+15555555555">(555) 555-5555</a>
 
 ```
 
