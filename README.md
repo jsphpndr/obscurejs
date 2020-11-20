@@ -2,7 +2,7 @@
 
 A lightweight script to obscure (or hide) email addresses and telephone numbers from spammers.
 
-**[View the ]()**
+<strong><a href="https://codepen.io/jsphpndr/pen/yLJWqqd" target="blank" rel="noopener">View the Demo on Codepen →</a></strong>
 
 **Note:** 
 
@@ -92,7 +92,7 @@ To add a telephone number, create a `<script>` tag with the following attributes
 * `data-line`
 * `obscure`
 
-The attribute values follow the <a href="https://en.wikipedia.org/wiki/International_Telecommunication_Union" target="_blank">International Telecommunication Union</a> sector <a href="https://en.wikipedia.org/wiki/ITU-T" target="_blank">ITU-T</a> issued recommendation <a href="https://en.wikipedia.org/wiki/E.123" target="_blank">E.123</a>.
+The attribute values follow the <a href="https://en.wikipedia.org/wiki/International_Telecommunication_Union" target="_blank" rel="noopener">International Telecommunication Union</a> sector <a href="https://en.wikipedia.org/wiki/ITU-T" target="_blank" rel="noopener">ITU-T</a> issued recommendation <a href="https://en.wikipedia.org/wiki/E.123" target="_blank" rel="noopener">E.123</a>.
 
 ```
 <script data-country="1" data-area="555" data-prefix="5555" data-line="5555" obscure></script>
