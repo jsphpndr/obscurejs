@@ -46,7 +46,7 @@ You can [download the files directly from Github](https://github.com/jsphpndr/ob
 
 Obscure.js uses attributes on the `<template>` tag to generate email addresses and telephone numbers.
 
-The `<template>` tag is a semantic element designed to have it's content rendered by javascript, quietly failing when javascript is not available.
+The `<template>` tag is a non-semantic element designed to have it's content rendered by javascript, quietly failing when javascript is not available.
 
 ### Attributes
 
