@@ -110,7 +110,7 @@ To add a US pattern telephone number, create a `<template>` tag with the followi
 * `data-p4`
 * `obscure`
 
-The `data-p1` representing the country code, `data-p2` the area code, `data-p1` the prefix code and `data-p4` the line code.
+`data-p1` representing the country code, `data-p2` the area code, `data-p1` the prefix code and `data-p4` the line code.
 
 ```
   <template obscure data-p1="+1" id="test2" class="test1" data-p2="481" data-p3="914" data-p4="1124">
@@ -122,7 +122,7 @@ The `data-p1` representing the country code, `data-p2` the area code, `data-p1` 
 This will produce the following:
 
 ```
-<span>(481) 555-5555</span>
+<span>(481) 914-1124</span>
 
 ```
 
