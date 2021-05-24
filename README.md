@@ -4,12 +4,6 @@ A lightweight script to obscure (or hide) email addresses and telephone numbers 
 
 <strong><a href="https://codepen.io/jsphpndr/pen/yLJWqqd" target="blank" rel="noopener">View the Demo on Codepen →</a></strong>
 
-**Note:** 
-
-The plugin comes with limited options at present. Future versions will include further options to change display patterns for phone numbers (i.e. "555-555-5555", "555.555.5555", "555 555 5555").
-
-Suggestions are welcome.
-
 ## Table of Contents
 
 * [Getting Started](#getting-started)
@@ -24,10 +18,10 @@ Compiled and production-ready code can be found in the dist directory. The src d
 
 #### Direct Download
 
-You can [download the files directly from Github](https://github.com/jsphpndr/obscurejs/archive/v1.0.0.zip).
+You can [download the files directly from Github](https://github.com/jsphpndr/obscurejs/archive/v2.0.zip).
 
 ```
-<script src="/path/to/obscure.min.js"></script>
+<template src="/path/to/obscure.min.js"></template>
 
 ```
 
@@ -35,48 +29,72 @@ You can [download the files directly from Github](https://github.com/jsphpndr/ob
 
 ```
 <!-- Always get the latest version. -->
-<script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure/dist/obscure.min.js"></script>
+<template src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure/dist/obscure.min.js"></template>
 
 <!-- Get minor updates and patch fixes within a major version -->
-<script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@1/dist/obscure.min.js"></script>
+<template src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@1/dist/obscure.min.js"></template>
 
 <!-- Get patch fixes within a minor version -->
-<script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@1.0/dist/obscure.min.js"></script>
+<template src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@2.0/dist/obscure.min.js"></template>
 
-<!-- Get a specific version -->
-<script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@1.0.0/dist/obscure.min.js"></script>
+[\\] # (<!-- Get a specific version -->)
+[\\] #(<template src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@1.0.0/dist/obscure.min.js"></template>)
 
 ```
-
-<!-- #### NPM
-
-Coming soon. -->
 
 ## Adding Contact Information
 
-Obscure uses attributes on the non-semantic `<script>` tag to generate telephone number and email address links.
+Obscure.js uses attributes on the `<template>` tag to generate email addresses and telephone numbers.
 
-It's designed to quietly fail when javascript is not available.
+The `<template>` tag is a semantic element designed to have it's content rendered by javascript, quietly failing when javascript is not available.
+
+### Attributes
+
+The `obscure` attribute is required on the `<template>` tag in order to work.
+
+Values for email addresses and numbers utilize the `data-pX` attribute, wherein X represents an integer (i.e. `data-p1="val"`,`data-p2="val"`).
+
+ID and class selectors can also be added to `<template>` tags.
+
+```
+
+<template id="something" class="another something" data-p1="something" data-p2="else" obscure></template>
+
+```
+
+### Patterns
+
+Patterns are determined by the configuration nested in the `<template>` tag. 
+
+To call a value in a pattern use `%X` wherein X represents a corresponding integer (i.e. `%1`, `%2`).
+
+```
+%1@%2
+
+```
 
 ### Adding email addresses
 
-To add an email address, create a `<script>` tag with the following attributes:
+To add an email address, create a `<template>` tag with the following attributes:
 
-* `data-local`
-* `data-domain`
+* `data-p1`
+* `data-p2`
 * `obscure`
 
-The `data-local` attribute will contain the username and `data-domain` the relevant domain (i.e. "hotmail.com" or "mycustomurl.com").
+The `data-p1` attribute will contain the username and `data-p2` the relevant domain (i.e. "hotmail.com" or "mycustomurl.com").
 
 ```
-<script data-local="hello" data-domain="example.com" obscure></script>
+
+  <template obscure data-p1="hello" data-p2="example.com">
+      <a href="mailto:%1@%2">%1@%2</a>
+  </template>
 
 ```
 
 This will produce the following:
 
 ```
-<a href="mailto:hello@example.com">hello@example.com</a>
+<span><a href="mailto:hello@example.com">hello@example.com</a></span>
 
 ```
 
@@ -84,29 +102,40 @@ This will produce the following:
 
 There's not only a need to hide emails, but phone numbers, as well.
 
-To add a telephone number, create a `<script>` tag with the following attributes:
+To add a US pattern telephone number, create a `<template>` tag with the following attributes:
 
-* `data-country`
-* `data-area`
-* `data-prefix`
-* `data-line`
+* `data-p1`
+* `data-p2`
+* `data-p3`
+* `data-p4`
 * `obscure`
 
-The attribute values follow the <a href="https://en.wikipedia.org/wiki/International_Telecommunication_Union" target="_blank" rel="noopener">International Telecommunication Union</a> sector <a href="https://en.wikipedia.org/wiki/ITU-T" target="_blank" rel="noopener">ITU-T</a> issued recommendation <a href="https://en.wikipedia.org/wiki/E.123" target="_blank" rel="noopener">E.123</a>.
+The `data-p1` representing the country code, `data-p2` the area code, `data-p1` the prefix code and `data-p4` the line code.
 
 ```
-<script data-country="1" data-area="555" data-prefix="5555" data-line="5555" obscure></script>
+  <template obscure data-p1="+1" id="test2" class="test1" data-p2="481" data-p3="914" data-p4="1124">
+    (%2) %3-%4
+  </template>
 
 ```
 
 This will produce the following:
 
 ```
-<a href="tel:+15555555555">(555) 555-5555</a>
+<span>(481) 555-5555</span>
 
 ```
 
-**NOTE:** The default pattern is fixed at "(555) 555-5555". Future versions of this plugin will feature options for different patterns.
+If not already apparent, Obscure.js allows numbers to be rendered in any pattern, as well.
+
+```
+  <template id="french" class="french pattern" data-p1="+33" data-p2="1" data-p3="22" data-p4="33" data-p5="44" data-p6="55" obscure>
+    <a href="tel:%1%2%3%4%5%6">%1 %2 %3 %4 %5 %6</a>
+  </template>
+
+  <span  id="french" class="french pattern"><a href="tel:+33183756631">+33 1 22 33 44 55</a></span>
+
+```
 
 ## Initialize Obscure
 
