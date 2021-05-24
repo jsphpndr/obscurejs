@@ -14,7 +14,7 @@ A lightweight script to obscure (or hide) email addresses and telephone numbers 
 
 Compiled and production-ready code can be found in the dist directory. The src directory contains development code.
 
-### Include Obscure on your site.
+### Include Obscure On Your Site
 
 #### Direct Download
 
@@ -29,16 +29,16 @@ You can [download the files directly from Github](https://github.com/jsphpndr/ob
 
 ```
 <!-- Always get the latest version. -->
-<template src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure/dist/obscure.min.js"></template>
+<script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure/dist/obscure.min.js"></script>
 
 <!-- Get minor updates and patch fixes within a major version -->
-<template src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@1/dist/obscure.min.js"></template>
+<template src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@2/dist/obscure.min.js"></script>
 
 <!-- Get patch fixes within a minor version -->
-<template src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@2.0/dist/obscure.min.js"></template>
+<script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@2.0/dist/obscure.min.js"></script>
 
-[\\] # (<!-- Get a specific version -->)
-[\\] #(<template src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@1.0.0/dist/obscure.min.js"></template>)
+<!-- Get a specific version -->
+<template src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@2.0.0/dist/obscure.min.js"></script>
 
 ```
 
