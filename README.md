@@ -150,4 +150,4 @@ In the footer of your page, after the content, initialize Obscure.
 
 ## Special Thanks
 
-A special thanks to Jordin Brown (@cognetif) for his help with this script.
+A special thanks to Jordin Brown ([@cognetif](https://github.com/cognetif)) for his help with this script.
