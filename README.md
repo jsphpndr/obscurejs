@@ -133,7 +133,7 @@ If not already apparent, Obscure.js allows numbers to be rendered in any pattern
     <a href="tel:%1%2%3%4%5%6">%1 %2 %3 %4 %5 %6</a>
   </template>
 
-  <span  id="french" class="french pattern"><a href="tel:+33122334455">+33 1 22 33 44 55</a></span>
+  <span id="french" class="french pattern"><a href="tel:+33122334455">+33 1 22 33 44 55</a></span>
 
 ```
 
