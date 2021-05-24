@@ -147,3 +147,7 @@ In the footer of your page, after the content, initialize Obscure.
 </script>
 
 ```
+
+## Special Thanks
+
+A special thanks to Jordin Brown (@cognetif) for his help with this script.
