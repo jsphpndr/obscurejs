@@ -44,7 +44,7 @@ You can [download the files directly from Github](https://github.com/jsphpndr/ob
 
 ## Adding Contact Information
 
-Obscure.js uses attributes on the `<template>` tag to generate email addresses and telephone numbers.
+Obscure.js uses data-attributes on the `<template>` tag to generate email addresses and telephone numbers.
 
 The `<template>` tag is a non-semantic element designed to have it's content rendered by javascript, quietly failing when javascript is not available.
 
@@ -68,7 +68,6 @@ ID and class attributes can also be added to `<template>` tags.
 
 ```
 
-
 ### Patterns
 
 Patterns are determined by the content configuration nested in the `<template>` tag. 
@@ -76,13 +75,14 @@ Patterns are determined by the content configuration nested in the `<template>` 
 To call a value in a pattern use `%X` wherein X represents a corresponding integer (i.e. `%1`, `%2`).
 
 ```html
+
 %1@%2
 
 ```
 
 ### Adding email addresses
 
-To add an email address, create a `<template>` tag with the following attributes:
+To add an email address, create a `<template>` tag with the following data-attributes:
 
 * `data-p1`
 * `data-p2`
@@ -109,7 +109,7 @@ This will render the following:
 
 There's not only a need to hide emails, but phone numbers, as well.
 
-To add a US pattern telephone number, create a `<template>` tag with the following attributes:
+To add a US pattern telephone number, create a `<template>` tag with the following data-attributes:
 
 * `data-p1`
 * `data-p2`
@@ -120,6 +120,7 @@ To add a US pattern telephone number, create a `<template>` tag with the followi
 `data-p1` representing the country code, `data-p2` the area code, `data-p1` the prefix code and `data-p4` the line code.
 
 ```html
+
   <template obscure data-p1="+1" id="test2" class="test1" data-p2="481" data-p3="914" data-p4="1124">
     (%2) %3-%4
   </template>
@@ -129,6 +130,7 @@ To add a US pattern telephone number, create a `<template>` tag with the followi
 This will render the following:
 
 ```html
+
 <span>(481) 914-1124</span>
 
 ```
@@ -136,6 +138,7 @@ This will render the following:
 If not already apparent, Obscure.js allows numbers to be rendered in any pattern, as well.
 
 ```html
+
   <template id="french" class="french pattern" data-p1="+33" data-p2="1" data-p3="22" data-p4="33" data-p5="44" data-p6="55" obscure>
     <a href="tel:%1%2%3%4%5%6">%1 %2 %3 %4 %5 %6</a>
   </template>
