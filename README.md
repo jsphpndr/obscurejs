@@ -18,10 +18,10 @@ Compiled and production-ready code can be found in the dist directory. The src d
 
 #### Direct Download
 
-You can [download the files directly from Github](https://github.com/jsphpndr/obscurejs/archive/v2.0.zip).
+You can [download the files directly from Github](https://github.com/jsphpndr/obscurejs/archive/refs/tags/2.0.zip).
 
 ```
-<template src="/path/to/obscure.min.js"></template>
+<script src="/path/to/obscure.min.js"></script>
 
 ```
 
@@ -38,7 +38,7 @@ You can [download the files directly from Github](https://github.com/jsphpndr/ob
 <script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@2.0/dist/obscure.min.js"></script>
 
 <!-- Get a specific version -->
-<template src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@2.0.0/dist/obscure.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@2.0.0/dist/obscure.min.js"></script>
 
 ```
 
@@ -50,25 +50,32 @@ The `<template>` tag is a non-semantic element designed to have it's content ren
 
 ### Attributes
 
-The `obscure` attribute is required on the `<template>` tag in order to work.
+The `obscure` data-attribute is required on the `<template>` tag in order to work.
 
-Values for email addresses and numbers utilize the `data-pX` attribute, wherein X represents an integer (i.e. `data-p1="val"`,`data-p2="val"`).
+Values for email addresses and numbers utilize the `data-pX` data-attribute, wherein X represents an integer (i.e. `data-p1="val"`,`data-p2="val"`).
 
-ID and class selectors can also be added to `<template>` tags.
+```html
+
+<template data-p1="value" data-p2="value" obscure></template>
+
+```
+
+ID and class attributes can also be added to `<template>` tags.
+
+```html
+
+<template id="value" class="value" data-p1="value" data-p2="value" obscure></template>
 
 ```
 
-<template id="something" class="another something" data-p1="something" data-p2="else" obscure></template>
-
-```
 
 ### Patterns
 
-Patterns are determined by the configuration nested in the `<template>` tag. 
+Patterns are determined by the content configuration nested in the `<template>` tag. 
 
 To call a value in a pattern use `%X` wherein X represents a corresponding integer (i.e. `%1`, `%2`).
 
-```
+```html
 %1@%2
 
 ```
@@ -83,7 +90,7 @@ To add an email address, create a `<template>` tag with the following attributes
 
 The `data-p1` attribute will contain the username and `data-p2` the relevant domain (i.e. "hotmail.com" or "mycustomurl.com").
 
-```
+```html
 
   <template obscure data-p1="hello" data-p2="example.com">
       <a href="mailto:%1@%2">%1@%2</a>
@@ -91,9 +98,9 @@ The `data-p1` attribute will contain the username and `data-p2` the relevant dom
 
 ```
 
-This will produce the following:
+This will render the following:
 
-```
+```html
 <span><a href="mailto:hello@example.com">hello@example.com</a></span>
 
 ```
@@ -112,23 +119,23 @@ To add a US pattern telephone number, create a `<template>` tag with the followi
 
 `data-p1` representing the country code, `data-p2` the area code, `data-p1` the prefix code and `data-p4` the line code.
 
-```
+```html
   <template obscure data-p1="+1" id="test2" class="test1" data-p2="481" data-p3="914" data-p4="1124">
     (%2) %3-%4
   </template>
 
 ```
 
-This will produce the following:
+This will render the following:
 
-```
+```html
 <span>(481) 914-1124</span>
 
 ```
 
 If not already apparent, Obscure.js allows numbers to be rendered in any pattern, as well.
 
-```
+```html
   <template id="french" class="french pattern" data-p1="+33" data-p2="1" data-p3="22" data-p4="33" data-p5="44" data-p6="55" obscure>
     <a href="tel:%1%2%3%4%5%6">%1 %2 %3 %4 %5 %6</a>
   </template>
@@ -137,11 +144,14 @@ If not already apparent, Obscure.js allows numbers to be rendered in any pattern
 
 ```
 
-## Initialize Obscure
+## Initialize Obscure.js
 
-In the footer of your page, after the content, initialize Obscure.
+Just before the closing `</body>` tag, include the obscure.js external script and initialize:
 
-```
+```html
+
+<script src="/path/to/obscure.min.js"></script>
+
 <script>
   var obscure = new Obscure();
 </script>
