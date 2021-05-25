@@ -32,7 +32,7 @@ You can [download the files directly from Github](https://github.com/jsphpndr/ob
 <script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure/dist/obscure.min.js"></script>
 
 <!-- Get minor updates and patch fixes within a major version -->
-<template src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@2/dist/obscure.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@2/dist/obscure.min.js"></script>
 
 <!-- Get patch fixes within a minor version -->
 <script src="https://cdn.jsdelivr.net/gh/jsphpndr/obscure@2.0/dist/obscure.min.js"></script>
